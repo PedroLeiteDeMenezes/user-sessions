@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "root",
+    "password": "geladeira2017*",
+    "database": "Studying",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3308,
+    "migrations-path": "src/migrations"
+  },
+  "test": {
+    "username": "root",
+    "password": "geladeira2017*",
+    "database": "Studying_test",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3308
+  },
+  "production": {
+    "username": "root",
+    "password": "geladeira2017*",
+    "database": "Studying",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3308
+  }
+}
