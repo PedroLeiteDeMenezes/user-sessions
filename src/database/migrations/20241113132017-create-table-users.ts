@@ -24,7 +24,8 @@ module.exports = {
       password_hash: {
         type: DataTypes.STRING(255),
         allowNull: false
-      },      createdAt: {
+      },
+      createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW, 

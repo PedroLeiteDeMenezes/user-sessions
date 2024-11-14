@@ -3,8 +3,13 @@ import { Model, Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
 
 import User from './models/user';
+import Session from './models/userSession';
 
 import userRoutes from '../src/routes/userRoute';
+import sessionRoutes from '../src/routes/sessionRoute'
+import { Models } from './types/models';
+
+
 
 dotenv.config();
 const app = express();
@@ -25,8 +30,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 User.initialize(sequelize);
+Session.initialize(sequelize)
+
+const models: Models = {
+  User: User,
+  userSession: Session
+}
+
+User.associate(models);
+Session.associate(models)
 
 app.use('/users', userRoutes);
+app.use('/session', sessionRoutes)
 
 sequelize
   .sync()
